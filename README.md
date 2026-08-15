@@ -2,12 +2,17 @@
 
 Diese Anleitung beschreibt die grundlegende Einrichtung eines Raspberry Pi
 
-## Grunddbefehle
-
 ```sh
 cd ~
 whoami
 sudo reboot
+# List Open Files
+lsof +D /media/slawka/mntVEERBATIM_2G
+# automatisch mounten
+sudo mount -a
+# auswerfen
+slawka@rp:~ $ sudo umount /media/slawka/mntVEERBATIM_2G
+
 ```
 
 ## Netzwerk
@@ -94,6 +99,22 @@ smb://192.168.0.15/
 
 # Windows Dateiexplorer
 //192.168.0.15/
+```
+
+### festplatten 
+
+```sh
+# Welches Dateisystem hat die Verbatim-Platte?
+lsblk -f /dev/sdc1
+# Repariere die Partition
+sudo ntfsfix /dev/sdc1
+# mounten
+sudo mount /dev/sdc1 /media/slawka/mntVEERBATIM_2G
+
+# unmounten über den Ordnerpfad:
+sudo umount /media/slawka/mntVEERBATIM_2G
+# über die Device-ID:
+sudo umount /dev/sdc1
 ```
 
 ## Visual Studio Code installieren

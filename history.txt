@@ -1,0 +1,5 @@
+  188  sudo mkdir /media/hdd_wd_2tb
+  189  sudo chmod 777 /media/hdd_wd_2tb
+  
+  199  history
+  200  history >> history.txt
